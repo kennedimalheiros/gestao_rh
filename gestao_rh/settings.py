@@ -50,6 +50,8 @@ INSTALLED_APPS = [
     'apps.empresas',
     'apps.funcionarios',
     'apps.departamentos',
+    'apps.documentos',
+    'apps.registro_hora_extra',
 ]
 
 ROOT_URLCONF = 'gestao_rh.urls'
