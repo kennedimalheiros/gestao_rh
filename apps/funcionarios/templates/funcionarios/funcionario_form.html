@@ -19,4 +19,9 @@ Editar
     Adicionar documento
 </a>
 {% endif %}
+<br><br>
+{% for documento in object.documento_set.all %}
+<a href="{{documento.arquivo.url}}">{{documento}}</a>  <br>
+{% endfor %}
+
 {% endblock %}
