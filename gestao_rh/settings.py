@@ -55,6 +55,7 @@ INSTALLED_APPS = [
     'apps.documentos',
     'apps.registro_hora_extra',
     'apps.core',
+    'bootstrapform',
 ]
 
 ROOT_URLCONF = 'gestao_rh.urls'
