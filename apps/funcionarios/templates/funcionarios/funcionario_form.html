@@ -11,5 +11,12 @@ Editar
 
     <button type="submit" class="btn btn-main">Salvar</button>
 </form>
+<br>
 
+<br>
+{% if object %}
+<a href="{% url 'create_documento' object.id %}" class="btn btn-success">
+    Adicionar documento
+</a>
+{% endif %}
 {% endblock %}
