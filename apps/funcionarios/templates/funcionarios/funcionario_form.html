@@ -2,26 +2,30 @@
 {% load bootstrap %}
 
 {% block main %}
-Editar
 
-<form method="POST">
-    {% csrf_token %}
+    <form method="POST">
+        {% csrf_token %}
 
-    {{ form|bootstrap }}
+        {{ form|bootstrap }}
 
-    <button type="submit" class="btn btn-main">Salvar</button>
-</form>
-<br>
+        <button type="submit" class="btn btn-main">Salvar</button>
+        <a href="{% url 'list_funcionarios' %}" class="btn btn-info">
+            Cancelar
+        </a>
+    </form>
+    <br>
 
-<br>
-{% if object %}
-<a href="{% url 'create_documento' object.id %}" class="btn btn-success">
-    Adicionar documento
-</a>
-{% endif %}
-<br><br>
-{% for documento in object.documento_set.all %}
-<a href="{{documento.arquivo.url}}">{{documento}}</a>  <br>
-{% endfor %}
+    <br>
+    {% if object %}
+    <a href="{% url 'create_documento' object.id %}" class="btn btn-success">
+        Adicionar documento
+    </a>
+    {% endif %}
+    <br><br>
+    {% for documento in object.documento_set.all %}
+        <a href="{{documento.arquivo.url}}">{{documento}}</a>  <br>
+    {% endfor %}
+
+
 
 {% endblock %}
